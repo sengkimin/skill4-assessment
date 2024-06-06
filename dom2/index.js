@@ -98,3 +98,24 @@ let books = [
     },
   },
 ];
+
+
+const booksContainer = document.getElementById('books');
+
+for (let i = 0; i < books.length; i++) {
+    const book = books[i];
+    const bookHTML = `
+        <div class="book">
+            <div class="book-image">
+                <img src="${book.imageUrls.large}" alt="book-image">
+            </div>
+            <div class="book-info">
+                <p>ISBN: ${book.isbn}</p>
+                <p>Title: ${book.bookTitle}</p>
+                <p>Author: ${book.bookAuthor}</p>
+                <p>Year of publication: ${book.yearOfPublication}</p>
+            </div>
+        </div>
+    `;
+    booksContainer.innerHTML += bookHTML;
+}
